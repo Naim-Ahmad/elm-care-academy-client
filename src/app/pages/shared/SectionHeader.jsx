@@ -1,4 +1,4 @@
-import classes from '@/app/components/shared/css/sectionHeader.module.css';
+import classes from '@/app/pages/shared/css/sectionHeader.module.css';
 import { Typography } from "@/components/MaterialTailwind";
 
 export default function SectionHeader(props) {

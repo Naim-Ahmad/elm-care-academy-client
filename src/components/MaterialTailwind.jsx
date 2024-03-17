@@ -9,6 +9,7 @@ import {
   Carousel,
   Collapse,
   IconButton,
+  Input,
   List,
   ListItem,
   Menu,
@@ -16,9 +17,12 @@ import {
   MenuItem,
   MenuList,
   Navbar,
+  Option,
+  Select,
+  Spinner,
   ThemeProvider,
   Tooltip,
-  Typography,
+  Typography
 } from "@material-tailwind/react";
 
 export {
@@ -26,14 +30,19 @@ export {
   Card,
   CardBody,
   CardFooter,
-  CardHeader, Carousel, Collapse,
-  IconButton, List,
+  CardHeader,
+  Carousel,
+  Collapse,
+  IconButton,
+  Input,
+  List,
   ListItem,
   Menu,
   MenuHandler,
   MenuItem,
-  MenuList, Navbar,
-  ThemeProvider, Tooltip,
+  MenuList,
+  Navbar, Option, Select, Spinner, ThemeProvider,
+  Tooltip,
   Typography
 };
 
