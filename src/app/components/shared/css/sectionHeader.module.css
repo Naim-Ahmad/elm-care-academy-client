@@ -1,0 +1,19 @@
+.title {
+  position: relative;
+}
+
+.title::after,
+.title::before {
+  content: "";
+  width: 61px;
+  height: 3px;
+  background-color: green;
+  border-radius: 2px;
+  position: absolute;
+  bottom: -1rem;
+  left: 25%;
+}
+
+.title::before {
+  left: 50%;
+}

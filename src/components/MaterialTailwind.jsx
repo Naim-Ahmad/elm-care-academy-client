@@ -2,6 +2,11 @@
 
 import {
   Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Carousel,
   Collapse,
   IconButton,
   List,
@@ -12,21 +17,23 @@ import {
   MenuList,
   Navbar,
   ThemeProvider,
-  Typography
+  Tooltip,
+  Typography,
 } from "@material-tailwind/react";
 
 export {
   Button,
-  Collapse,
-  IconButton,
-  List,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader, Carousel, Collapse,
+  IconButton, List,
   ListItem,
   Menu,
   MenuHandler,
   MenuItem,
-  MenuList,
-  Navbar,
-  ThemeProvider,
+  MenuList, Navbar,
+  ThemeProvider, Tooltip,
   Typography
 };
 
