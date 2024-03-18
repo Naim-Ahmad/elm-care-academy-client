@@ -17,8 +17,8 @@ export default function StickyNavbar() {
       <Typography
         as="li"
         variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
+        color="deep-purple"
+        className="p-1 font-bold"
       >
         <Link href="/" className="flex items-center">
           হোম

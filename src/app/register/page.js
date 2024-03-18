@@ -1,4 +1,5 @@
 "use client";
+import {} from "@/app/lib/firebase.config";
 import animationData from "@/assets/salam.json";
 import {
   Button,
@@ -14,6 +15,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Container from "../pages/shared/Container";
+import {RecaptchaVerifier} from "firebase/auth"
+import {auth} from '@/app/lib/firebase.config'
 
 export default function RegisterPage() {
   const {
@@ -21,11 +24,20 @@ export default function RegisterPage() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const [role, setRole] = useState("");
 
   const [loading, setLoading] = useState(false);
 
   const handleRegister = (data) => {
     console.log(data);
+    const userData = { ...data, role };
+    window.recaptchaVerifier = new RecaptchaVerifier(auth, 'sign-in-button', {
+      'size': 'invisible',
+      'callback': (response) => {
+        // reCAPTCHA solved, allow signInWithPhoneNumber.
+        onSignInSubmit();
+      }
+    });
   };
 
   return (
@@ -45,7 +57,7 @@ export default function RegisterPage() {
           <form onSubmit={handleSubmit(handleRegister)} className="mt-8 mb-2">
             <div className="mb-1 flex flex-col gap-6 w-full">
               <Typography variant="h6" color="blue-gray" className="-mb-6">
-                নাম লিখুন
+                নাম প্রদান করুন
               </Typography>
               <Input
                 size="lg"
@@ -54,7 +66,7 @@ export default function RegisterPage() {
                 labelProps={{
                   className: "before:content-none after:content-none",
                 }}
-                error={errors?.password?.type === "required"}
+                error={errors?.name?.type === "required"}
                 {...register("name", { required: true })}
               />
               {errors && errors?.name?.type === "required" && (
@@ -67,22 +79,22 @@ export default function RegisterPage() {
                 </Typography>
               )}
 
+              {/*  phone number*/}
               <Typography variant="h6" color="blue-gray" className="-mb-6">
-                ফোন নাম্বার লিখুন
+                ফোন নাম্বার প্রদান করুন
               </Typography>
               <Input
                 size="lg"
-                type="number"
                 variant="outlined"
                 placeholder="+8801XXXXXXXX"
                 className=" !border-t-blue-gray-200 focus:!border-t-gray-900 w-full placeholder:opacity-100"
                 labelProps={{
                   className: "before:content-none after:content-none",
                 }}
-                error={errors?.password?.type === "required"}
+                error={errors?.phone?.type === "required"}
                 {...register("phone", { required: true })}
               />
-              {errors && errors?.password?.type === "required" && (
+              {errors && errors?.phone?.type === "required" && (
                 <Typography
                   variant="small"
                   className="-mt-5 font-normal"
@@ -92,8 +104,10 @@ export default function RegisterPage() {
                 </Typography>
               )}
 
+              {/* email */}
+
               <Typography variant="h6" color="blue-gray" className="-mb-6">
-                ইমেইল লিখুন
+                ইমেইল প্রদান করুন
               </Typography>
               <Input
                 size="lg"
@@ -103,10 +117,10 @@ export default function RegisterPage() {
                 labelProps={{
                   className: "before:content-none after:content-none",
                 }}
-                error={errors?.password?.type === "required"}
+                error={errors?.email?.type === "required"}
                 {...register("email", { required: true })}
               />
-              {errors && errors?.password?.type === "required" && (
+              {errors && errors?.email?.type === "required" && (
                 <Typography
                   variant="small"
                   className="-mt-5 font-normal"
@@ -116,10 +130,39 @@ export default function RegisterPage() {
                 </Typography>
               )}
 
+              <Typography variant="h6" color="blue-gray" className="-mb-6">
+                আপনি ছাত্র/শিক্ষক?
+              </Typography>
+              <Select
+                size="lg"
+                variant="outlined"
+                name="bloodGroup"
+                labelProps={{
+                  className: "before:content-none after:content-none",
+                }}
+                onChange={(v) => setRole(v)}
+                required
+              >
+                <Option value="" hidden disabled>
+                  যে কোন একটি সিলেক্ট করুন
+                </Option>
+                <Option value="ছাত্র">ছাত্র</Option>
+                <Option value="শিক্ষক">শিক্ষক </Option>
+              </Select>
+              {errors?.role?.type === "required" && (
+                <Typography
+                  variant="small"
+                  className="-mt-5 font-normal"
+                  color="red"
+                >
+                  অবশ্যই যেকোনো একটি সিলেক্ট করুন
+                </Typography>
+              )}
+
               {/* ===========   password    =============*/}
 
               <Typography variant="h6" color="blue-gray" className="-mb-6">
-                পাসওয়ার্ড লিখুন
+                পাসওয়ার্ড প্রদান করুন
               </Typography>
               <Input
                 type="password"
@@ -141,20 +184,6 @@ export default function RegisterPage() {
                   পাসওয়ার্ড আবশ্যক
                 </Typography>
               )}
-
-              <Typography variant="h6" color="blue-gray" className="-mb-6">
-                আপনি ছাত্র/শিক্ষক?
-              </Typography>
-              <Select
-                size="lg"
-                variant="outlined"
-                name="bloodGroup"
-                onChange={(v) => setBloodGroup(v)}
-                required
-              >
-                <Option value="ছাত্র">ছাত্র</Option>
-                <Option value="শিক্ষক">শিক্ষক </Option>
-              </Select>
             </div>
 
             <Button disabled={loading} type="submit" className="mt-6" fullWidth>

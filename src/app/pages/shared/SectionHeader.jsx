@@ -6,7 +6,7 @@ export default function SectionHeader(props) {
 
   return (
     <div className='flex flex-col items-center max-w-xl mx-auto text-center'>
-      <Typography as="h2" variant="h2" className={`mb-8 ${classes.title}`}>{title}</Typography>
+      <Typography as="h2" variant="h2" className={`mb-8 text-2xl md:text-4xl ${classes.title}`}>{title}</Typography>
       <Typography as="p" variant="small">{description}</Typography>
     </div>
   )

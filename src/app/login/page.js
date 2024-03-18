@@ -106,7 +106,7 @@ export default function LoginPage() {
             </Button>
             <Typography color="gray" className="mt-4 text-center font-normal">
               আপনার কি অ্যাকাউন্ট নেই?{" "}
-              <Link href="/login" className="font-medium text-gray-900">
+              <Link href="/register" className="font-medium text-gray-900">
                 রেজিস্টার করুন
               </Link>
             </Typography>
