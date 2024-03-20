@@ -1,3 +1,4 @@
+import { useCreateUserMutation } from "@/redux/api/auth/authAPI";
 import {
   Button,
   Dialog,
@@ -13,12 +14,15 @@ export default function OTPVerify({ confirmObj, open, data, openHandler: handleO
   const [verifyCode, setVerifyCode] = useState('')
   const [error, setError] = useState('')
 
+  const [createUser] = useCreateUserMutation({
+    fixedCacheKey: 'create-shared-user'
+  })
 
   const verifyPhone = () => {
     setError('')
     confirmObj.confirm(verifyCode).then(res => {
       handleOpen()
-      console.log(res)
+      createUser(data)
     }).catch(err => {
       setError("আপনার কোড ভুল হয়েছে")
     })
@@ -42,7 +46,7 @@ export default function OTPVerify({ confirmObj, open, data, openHandler: handleO
                   value={verifyCode}
                   onChange={(e) => setVerifyCode(e.target.value)}
                   className={` ${error ? "!border-t-red-400 focus:!border-t-red-900": "!border-t-blue-gray-200 focus:!border-t-gray-900"}  w-full placeholder:opacity-100 pr-20`}
-                  error={error}
+                  error={error ? error : false}
                   labelProps={{
                     className: "before:content-none after:content-none",
                   }}

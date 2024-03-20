@@ -9,5 +9,14 @@ export const authSlice = apiSlice.injectEndpoints({
         body: userData,
       }),
     }),
+    recaptchaVerify: builder.mutation({
+      query: (userData) => ({
+        url: "/users",
+        method: "POST",
+        body: userData,
+      }),
+    }),
   }),
 });
+
+export const { useCreateUserMutation } = authSlice;

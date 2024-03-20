@@ -13,7 +13,7 @@ import useToggle from "@/hooks/useToggle";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import Lottie from "lottie-react";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import auth from "../lib/firebase.config";
 import Container from "../pages/shared/Container";
@@ -29,14 +29,14 @@ export default function RegisterPage() {
   const [confirmObj, setConfirmObj] = useState({});
   const [open, openHandler] = useToggle();
   const [userData, setUserData] = useState({});
-  const btnRef = useRef();
 
   const [loading, setLoading] = useState(false);
 
   const handleRegister = (data) => {
     // console.log(data);
+    setLoading(true);
     const userData = { ...data, role };
-    // setUserData(userData);
+    setUserData(userData);
     const captchaVerifier = new RecaptchaVerifier(auth, "sign-in", {
       size: "invisible",
     });
@@ -46,16 +46,11 @@ export default function RegisterPage() {
       : "+88" + userData.phone;
     signInWithPhoneNumber(auth, phoneNumber, captchaVerifier)
       .then((confirmationResult) => {
-        // SMS sent. Prompt user to type the code from the message, then sign the
-        // user in with confirmationResult.confirm(code).
-        // confirmationResult.confirm(code);
         openHandler();
         setConfirmObj(confirmationResult);
       })
       .catch((error) => {
-        // Error; SMS not sent
-        // ...
-        console.log();
+        console.log(error);
       });
   };
 

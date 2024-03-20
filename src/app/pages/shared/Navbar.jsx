@@ -6,54 +6,55 @@ import {
 } from "@/components/MaterialTailwind";
 import CollapseNavList from "@/components/navbar/CollapseNavList";
 import MenuIcon from "@/components/navbar/MenuIcon";
+import NavLink from '@/components/navbar/NavLink';
 import Image from "next/image";
 import Link from "next/link";
 
-export default function StickyNavbar() {
+const menus = [
+  {
+    label: 'হোম',
+    route: '/'
+  },
+  {
+    label: 'কোর্স',
+    route: '/courses'
+  },
+  {
+    label: 'পরিচয়',
+    route: '/about'
+  },
+  {
+    label: 'শিক্ষকবৃন্দ',
+    route: '/teachers'
+  },
+  {
+    label: 'যোগাযোগ',
+    route: '/contacts'
+  },
+]
 
+export default function StickyNavbar() {
 
   const navList = (
     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <Typography
-        as="li"
-        variant="small"
-        color="deep-purple"
-        className="p-1 font-bold"
-      >
-        <Link href="/" className="flex items-center">
-          হোম
-        </Link>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <Link href="/" className="flex items-center">
-          কোর্স
-        </Link>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <Link href="/" className="flex items-center">
-          পরিচয়
-        </Link>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <Link href="/" className="flex items-center">
-          শিক্ষক
-        </Link>
-      </Typography>
+
+      {
+        menus.map(menu => {
+          const { label, route } = menu;
+          return (
+            <Typography key={label}
+              as="li"
+              variant="small"
+              color="blue-gray"
+              className="p-1 font-normal "
+            >
+              <NavLink href={route} className="relative navItem">
+                {label}
+              </NavLink>
+            </Typography>
+          )
+        })
+      }
     </ul>
   );
 
