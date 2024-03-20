@@ -6,15 +6,14 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyD_nRvUIuvWUGQXVCy2ByvktqvqHzylAYs",
-  authDomain: "ilm-care-bd-a2838.firebaseapp.com",
-  projectId: "ilm-care-bd-a2838",
-  storageBucket: "ilm-care-bd-a2838.appspot.com",
-  messagingSenderId: "303910974029",
-  appId: "1:303910974029:web:29310e2fe2361c5c06a204",
-  measurementId: "G-61QYZS8FDK",
+  apiKey: "AIzaSyCGVIF7LJ15ULm1oCimqJlnEF2hNEuUznU",
+  authDomain: "life-saving-blood-donation.firebaseapp.com",
+  projectId: "life-saving-blood-donation",
+  storageBucket: "life-saving-blood-donation.appspot.com",
+  messagingSenderId: "416323611472",
+  appId: "1:416323611472:web:2fdd120df4a844df4f1a55",
+  measurementId: "G-P6TV2N97GM",
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);

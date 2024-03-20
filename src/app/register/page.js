@@ -1,5 +1,4 @@
 "use client";
-import {} from "@/app/lib/firebase.config";
 import animationData from "@/assets/salam.json";
 import {
   Button,
@@ -10,13 +9,15 @@ import {
   Spinner,
   Typography,
 } from "@/components/MaterialTailwind";
+import useToggle from "@/hooks/useToggle";
+import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import Lottie from "lottie-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
+import auth from "../lib/firebase.config";
 import Container from "../pages/shared/Container";
-import {RecaptchaVerifier} from "firebase/auth"
-import {auth} from '@/app/lib/firebase.config'
+import OTPVerify from "./OTPVerify";
 
 export default function RegisterPage() {
   const {
@@ -25,19 +26,37 @@ export default function RegisterPage() {
     formState: { errors },
   } = useForm();
   const [role, setRole] = useState("");
+  const [confirmObj, setConfirmObj] = useState({});
+  const [open, openHandler] = useToggle();
+  const [userData, setUserData] = useState({});
+  const btnRef = useRef();
 
   const [loading, setLoading] = useState(false);
 
   const handleRegister = (data) => {
-    console.log(data);
+    // console.log(data);
     const userData = { ...data, role };
-    window.recaptchaVerifier = new RecaptchaVerifier(auth, 'sign-in-button', {
-      'size': 'invisible',
-      'callback': (response) => {
-        // reCAPTCHA solved, allow signInWithPhoneNumber.
-        onSignInSubmit();
-      }
+    // setUserData(userData);
+    const captchaVerifier = new RecaptchaVerifier(auth, "sign-in", {
+      size: "invisible",
     });
+
+    const phoneNumber = userData.phone.startsWith("+88")
+      ? userData.phone
+      : "+88" + userData.phone;
+    signInWithPhoneNumber(auth, phoneNumber, captchaVerifier)
+      .then((confirmationResult) => {
+        // SMS sent. Prompt user to type the code from the message, then sign the
+        // user in with confirmationResult.confirm(code).
+        // confirmationResult.confirm(code);
+        openHandler();
+        setConfirmObj(confirmationResult);
+      })
+      .catch((error) => {
+        // Error; SMS not sent
+        // ...
+        console.log();
+      });
   };
 
   return (
@@ -136,7 +155,7 @@ export default function RegisterPage() {
               <Select
                 size="lg"
                 variant="outlined"
-                name="bloodGroup"
+                className=" !border-t-blue-gray-200 focus:!border-t-gray-900 placeholder:opacity-100"
                 labelProps={{
                   className: "before:content-none after:content-none",
                 }}
@@ -185,7 +204,7 @@ export default function RegisterPage() {
                 </Typography>
               )}
             </div>
-
+            <div id="sign-in"></div>
             <Button disabled={loading} type="submit" className="mt-6" fullWidth>
               {loading ? (
                 <div className="flex justify-center">
@@ -215,6 +234,14 @@ export default function RegisterPage() {
           />
         </div>
       </div>
+      {true && (
+        <OTPVerify
+          confirmObj={confirmObj}
+          data={userData}
+          open={open}
+          openHandler={openHandler}
+        />
+      )}
     </Container>
   );
 }
