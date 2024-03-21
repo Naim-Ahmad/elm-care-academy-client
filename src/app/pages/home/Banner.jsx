@@ -1,10 +1,10 @@
 "use client"
-import { Carousel, IconButton } from "@/components/MaterialTailwind";
- 
+import { Button, Carousel, IconButton, Typography } from "@/components/MaterialTailwind";
+
 export default function Banner() {
   return (
     <Carousel
-      className=""
+      className="h-[90svh]"
       prevArrow={({ handlePrev }) => (
         <IconButton
           variant="text"
@@ -54,21 +54,18 @@ export default function Banner() {
         </IconButton>
       )}
     >
-      <img
-        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-        alt="image 1"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-        alt="image 2"
-        className="h-full w-full object-cover"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-        alt="image 3"
-        className="h-full w-full object-cover"
-      />
+      <div className="hero flex justify-center items-center">
+        <div className="bg-white rounded-xl p-4 text-center">
+          <Typography as="h1" variant="h2">
+            ইলম কেয়ার বিডি 
+          </Typography>
+          <Typography>
+            ইলম হোক উন্মুক্ত নারী পুরুষ উভয়ের জন্য। 
+          </Typography>
+          <Button className="mt-3 mx-auto">কোর্স গুলো দেখুন</Button>
+        </div>
+      </div>
+
     </Carousel>
   );
 }

@@ -44,7 +44,7 @@ export default function StickyNavbar() {
           return (
             <Typography key={label}
               as="li"
-              variant="small"
+              variant="paragraph"
               color="blue-gray"
               className="p-1 font-normal "
             >
@@ -60,7 +60,7 @@ export default function StickyNavbar() {
 
   return (
 
-    <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4">
+    <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8">
       <div className="flex items-center justify-between text-blue-gray-900">
         <Link href="/">
           <Image src={logo} alt="ইলম কেয়ার বিডি" className='w-32 md:w-36' />
@@ -71,8 +71,7 @@ export default function StickyNavbar() {
             <Link href="/login">
               <Button
                 variant="text"
-                size="sm"
-                className="hidden lg:inline-block"
+                className="hidden text-md lg:inline-block"
               >
                 <span>লগইন</span>
               </Button>
@@ -80,7 +79,6 @@ export default function StickyNavbar() {
             <Link href="/register">
               <Button
                 variant="gradient"
-                size="sm"
                 className="hidden lg:inline-block"
               >
                 <span>রেজিস্টার</span>

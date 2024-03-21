@@ -2,8 +2,8 @@
 export default function Container({children}) {
 
   return (
-      <div className="max-w-7xl mx-auto px-6">
+      <section className="px-4 py-2 my-8 lg:my-16 lg:px-8">
           {children}
-      </div>
+      </section>
   )
 }
