@@ -65,7 +65,7 @@ export default function Footer() {
             <Typography as="a" href="https://www.facebook.com/ilmcarebd" className="opacity-80 transition-opacity hover:opacity-100">
               <FaFacebook />
             </Typography>
-            <Typography as="a" href="https://api.whatsapp.com/send?phone=01978951953" className="opacity-80 transition-opacity hover:opacity-100">
+            <Typography as="a" href="https://api.whatsapp.com/send?phone=+8801978951953" className="opacity-80 transition-opacity hover:opacity-100">
               <FaWhatsapp />
             </Typography>
             <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">
