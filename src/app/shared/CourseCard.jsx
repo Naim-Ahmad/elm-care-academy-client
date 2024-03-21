@@ -7,12 +7,13 @@ import {
   IconButton,
   Typography
 } from "@/components/MaterialTailwind";
+import Image from "next/image";
  
 export default function CourseCard() {
   return (
     <Card className="w-full shadow-lg">
       <CardHeader floated={false} color="blue-gray">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
           alt="ui/ux review check"
         />
