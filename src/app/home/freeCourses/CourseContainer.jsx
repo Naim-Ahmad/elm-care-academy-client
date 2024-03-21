@@ -1,7 +1,7 @@
+import Container from "@/app/shared/Container";
+import CourseCard from "@/app/shared/CourseCard";
+import SectionHeader from "@/app/shared/SectionHeader";
 import { Button } from "@/components/MaterialTailwind";
-import Container from "../../shared/Container";
-import CourseCard from "../../shared/CourseCard";
-import SectionHeader from "../../shared/SectionHeader";
 
 export default function FreeCourseContainer() {
 

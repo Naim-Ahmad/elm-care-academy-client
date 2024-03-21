@@ -1,7 +1,7 @@
-import Banner from "./pages/home/Banner";
-import FreeCourseContainer from "./pages/home/freeCourses/CourseContainer";
-import CourseContainer from "./pages/home/premiumCourses/CourseContainer";
-import WhyChooseUs from "./pages/home/whyChooseUs/WhyChooseUs";
+import Banner from "@/app/home/Banner";
+import FreeCourseContainer from "@/app/home/freeCourses/CourseContainer";
+import CourseContainer from "@/app/home/premiumCourses/CourseContainer";
+import WhyChooseUs from "@/app/home/whyChooseUs/WhyChooseUs";
 
 export default function Home() {
   return (

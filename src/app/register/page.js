@@ -16,7 +16,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import auth from "../lib/firebase.config";
-import Container from "../pages/shared/Container";
+import Container from "../shared/Container";
 import OTPVerify from "./OTPVerify";
 
 export default function RegisterPage() {

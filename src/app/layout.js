@@ -3,8 +3,8 @@ import StoreProvider from "@/redux/StoreProvider";
 import { Noto_Sans_Bengali } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import Footer from "./pages/shared/Footer";
-import StickyNavbar from "./pages/shared/Navbar";
+import Footer from "./shared/Footer";
+import StickyNavbar from "./shared/Navbar";
 
 const noto_sans = Noto_Sans_Bengali({ subsets: ["latin"] });
 

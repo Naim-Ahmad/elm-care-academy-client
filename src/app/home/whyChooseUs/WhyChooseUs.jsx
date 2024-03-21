@@ -1,10 +1,10 @@
+import Container from "@/app/shared/Container";
+import SectionHeader from "@/app/shared/SectionHeader";
 import experiencedTeacher from '@/assets/images/images578.jpeg';
 import porda from '@/assets/images/images667.jpeg';
 import onlineQuran from '@/assets/images/online-quran-teacher-728x427-2-1024x597.webp';
 import { Typography } from '@/components/MaterialTailwind';
 import Image from "next/image";
-import Container from "../../shared/Container";
-import SectionHeader from "../../shared/SectionHeader";
 
 const ourFeatures = [
     {
@@ -32,7 +32,6 @@ const ourFeatures = [
 export default function WhyChooseUs() {
 
     return (
-
         <Container>
             <SectionHeader title="আমাদের বিশিষ্ট সমূহ" description="" />
 

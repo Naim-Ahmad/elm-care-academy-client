@@ -11,7 +11,7 @@ import Lottie from "lottie-react";
 import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import Container from "../pages/shared/Container";
+import Container from "../shared/Container";
 
 export default function LoginPage() {
   const {
