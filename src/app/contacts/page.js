@@ -68,7 +68,7 @@ export default function Contacts() {
         </Card>
         <Card className="mt-6">
           <CardBody>
-            <Typography as="a" href="https://wa.me/qr/6N7N52IFODH2M1">
+            <Typography as="a" href="https://wa.me/qr/RPAF5MW51400M1">
               <FaWhatsapp
                 size={40}
                 className="mb-5 mx-auto text-deep-purple-500"
