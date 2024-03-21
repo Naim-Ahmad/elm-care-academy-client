@@ -6,16 +6,16 @@ import { FaFacebook, FaTwitter, FaWhatsapp, FaYoutube } from "react-icons/fa";
 
 const LINKS = [
   {
-    title: "Product",
-    items: ["Overview", "Features", "Solutions", "Tutorials"],
+    title: "কোর্স সমূহ",
+    items: ["ফ্রি কোর্স", "প্রিমিয়াম কোর্স", "একাডেমীক টিউশন"],
   },
   {
-    title: "Company",
-    items: ["About us", "Careers", "Press", "News"],
+    title: "পেজ",
+    items: ["হোম", "কোর্স", "শিক্ষকবৃন্দ", "পরিচয়", "যোগাযোগ"],
   },
   {
-    title: "Resource",
-    items: ["Blog", "Newsletter", "Events", "Help center"],
+    title: "কোর্স রিসোর্স",
+    items: ["তাজবিদ শিক্ষা কোর্স", "নাহু সরফ কোর্স", "মান্তেক কোর্স", "ফারায়েয কোর্স"],
   },
 ];
 
@@ -62,16 +62,16 @@ export default function Footer() {
             Rights Reserved.
           </Typography>
           <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
-            <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">
+            <Typography as="a" href="https://www.facebook.com/ilmcarebd" className="opacity-80 transition-opacity hover:opacity-100">
               <FaFacebook />
             </Typography>
-            <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">
+            <Typography as="a" href="https://api.whatsapp.com/send?phone=01978951953" className="opacity-80 transition-opacity hover:opacity-100">
               <FaWhatsapp />
             </Typography>
             <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">
               <BiLogoGmail />
             </Typography>
-            <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">
+            <Typography as="a" href="https://www.youtube.com/@ilmcarebd" className="opacity-80 transition-opacity hover:opacity-100">
               <FaYoutube />
             </Typography>
             <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">

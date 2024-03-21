@@ -7,6 +7,7 @@ import {
   CardFooter,
   CardHeader,
   Carousel,
+  Chip,
   Collapse,
   IconButton,
   Input,
@@ -20,9 +21,14 @@ import {
   Option,
   Select,
   Spinner,
+  Tab,
+  TabPanel,
+  Tabs,
+  TabsBody,
+  TabsHeader,
   ThemeProvider,
   Tooltip,
-  Typography
+  Typography,
 } from "@material-tailwind/react";
 
 export {
@@ -31,8 +37,7 @@ export {
   CardBody,
   CardFooter,
   CardHeader,
-  Carousel,
-  Collapse,
+  Carousel, Chip, Collapse,
   IconButton,
   Input,
   List,
@@ -41,7 +46,16 @@ export {
   MenuHandler,
   MenuItem,
   MenuList,
-  Navbar, Option, Select, Spinner, ThemeProvider,
+  Navbar,
+  Option,
+  Select,
+  Spinner,
+  Tab,
+  TabPanel,
+  Tabs,
+  TabsBody,
+  TabsHeader,
+  ThemeProvider,
   Tooltip,
   Typography
 };

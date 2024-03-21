@@ -1,5 +1,6 @@
 import classes from '@/app/shared/css/sectionHeader.module.css';
 import { Typography } from "@/components/MaterialTailwind";
+import PropTypes from 'prop-types';
 
 export default function SectionHeader(props) {
   const {title, description} = props;
@@ -10,4 +11,9 @@ export default function SectionHeader(props) {
       <Typography as="p" variant="small">{description}</Typography>
     </div>
   )
+}
+
+SectionHeader.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string
 }

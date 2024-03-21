@@ -28,7 +28,7 @@ export default function LoginPage() {
 
   return (
     <Container>
-      <div className="flex mx-auto flex-col-reverse lg:flex-row py-6 justify-between items-center gap-10">
+      <div className="flex mx-auto flex-col-reverse lg:flex-row py-6 justify-between items-center xl:w-2/3 gap-10">
         <Card color="transparent" shadow={false} className="flex-1">
           <Typography
             variant="h1"
@@ -38,7 +38,7 @@ export default function LoginPage() {
             লগইন করুন
           </Typography>
           <Typography color="gray" className="mt-1 font-normal text-center">
-            Nice to meet you! Enter your details to register.
+            আহলান সাহলান! নিচে আপনার তথ্য প্রদান করুন:
           </Typography>
           <form onSubmit={handleSubmit(handleRegister)} className="mt-8 mb-2">
             <div className="mb-1 flex flex-col gap-6 w-full">
@@ -118,7 +118,7 @@ export default function LoginPage() {
         >
           <Lottie
             animationData={animationData}
-            className="flex justify-center items-center"
+            className="flex justify-center items-center ms-6"
             loop={true}
           />
         </div>
