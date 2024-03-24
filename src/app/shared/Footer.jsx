@@ -23,7 +23,7 @@ const currentYear = new Date().getFullYear();
 
 export default function Footer() {
   return (
-    <footer className="relative w-full mt-10">
+    <footer className="relative w-full mt-10 py-5 lg:py-10">
       <div className="mx-auto w-full max-w-7xl px-8">
         <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
           <Image src={logo} alt="ইলম কেয়ার বিডি" className='w-32 md:w-40' />
@@ -31,7 +31,7 @@ export default function Footer() {
             {LINKS.map(({ title, items }) => (
               <ul key={title}>
                 <Typography
-                  variant="small"
+                  variant="paragraph"
                   color="blue-gray"
                   className="mb-3 font-medium opacity-40"
                 >
@@ -68,13 +68,13 @@ export default function Footer() {
             <Typography as="a" href="https://api.whatsapp.com/send?phone=+8801978951953" className="opacity-80 transition-opacity hover:opacity-100">
               <FaWhatsapp />
             </Typography>
-            <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">
+            <Typography as="a" href="mailto:ilmcarebd@gmail.com" className="opacity-80 transition-opacity hover:opacity-100">
               <BiLogoGmail />
             </Typography>
             <Typography as="a" href="https://www.youtube.com/@ilmcarebd" className="opacity-80 transition-opacity hover:opacity-100">
               <FaYoutube />
             </Typography>
-            <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">
+            <Typography as="a" href="https://www.twitter.com/@ilmcarebd" className="opacity-80 transition-opacity hover:opacity-100">
               <FaTwitter />
             </Typography>
           </div>

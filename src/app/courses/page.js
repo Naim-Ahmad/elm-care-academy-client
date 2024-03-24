@@ -20,6 +20,7 @@ export default function CoursesPage() {
           <CourseCard />
           <CourseCard />
           <CourseCard />
+          <CourseCard />
         </div>
       ),
     },
@@ -28,6 +29,7 @@ export default function CoursesPage() {
       value: "প্রিমিয়াম কোর্স",
       desc: (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <CourseCard />
           <CourseCard />
           <CourseCard />
           <CourseCard />
@@ -43,6 +45,7 @@ export default function CoursesPage() {
           <CourseCard />
           <CourseCard />
           <CourseCard />
+          <CourseCard />
         </div>
       ),
     },
@@ -53,7 +56,7 @@ export default function CoursesPage() {
 
       <div>
         <div>
-          <Tabs id="custom-animation" value="html">
+          <Tabs id="custom-animation" value="সমস্থ কোর্স">
             <TabsHeader className="lg:w-1/2 mx-auto">
               {data.map(({ label, value }) => (
                 <Tab key={value} value={value}>
